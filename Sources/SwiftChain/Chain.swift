@@ -20,5 +20,3 @@ public struct Chain<Input,Output>: ChainComponent {
         try await content.invoke(input)
     }
 }
-
-

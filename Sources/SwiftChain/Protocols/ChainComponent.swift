@@ -5,13 +5,20 @@
 //  Created by Noah Kamara on 31.12.23.
 //
 
+/// A Component in a ``SwiftChain/Chain``
+/// It this provides a method ``SwiftChain/ChainComponent/invoke(_:)`` that takes an input and provides an output
 public protocol ChainComponent<Input,Output> {
     associatedtype Input
     associatedtype Output
     
+    /// Invoke this component
+    /// - Parameter input: ``Input`` this component takes
+    /// - Returns: ``Output`` for this component
     func invoke(_ input: Input) async throws -> Output
 }
 
+
+/// Modifies a Chain wrapping it's in- and output
 public protocol ChainModifier<Input,Output> {
     associatedtype Input
     associatedtype Output
